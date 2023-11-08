@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PasswordChecker Flowchart</title>
+    <script type="text/javascript" src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+
+<div class="mermaid">
+graph TD;
+    Start --> Input;
+    Input --> CheckLength;
+    CheckLength -->|Yes| CheckUppercase;
+    CheckLength -->|No| OutputInvalid;
+    CheckUppercase -->|Yes| CheckLowercase;
+    CheckUppercase -->|No| OutputInvalid;
+    CheckLowercase -->|Yes| CheckDigit;
+    CheckLowercase -->|No| OutputInvalid;
+    CheckDigit -->|Yes| OutputValid;
+    CheckDigit -->|No| OutputInvalid;
+    OutputInvalid --> EndInvalid;
+    OutputValid --> EndValid;
+</div>
+
+<script>
+    mermaid.initialize({startOnLoad:true});
+</script>
+
+</body>
+</html>
